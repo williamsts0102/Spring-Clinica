@@ -43,7 +43,7 @@ public class SecurityConfig {
 		return http.build();*/
 		http.csrf().disable().authorizeHttpRequests().
 			requestMatchers("/usuario/**").permitAll().and().
-			authorizeHttpRequests().requestMatchers("/medicamento/**","/medico/**").
+			authorizeHttpRequests().requestMatchers("/medicamento/**","/medico/**","/boleta/**").
 			authenticated().and().formLogin().loginPage("/usuario/login").
 			defaultSuccessUrl("/usuario/intranet");
 		return http.build();
