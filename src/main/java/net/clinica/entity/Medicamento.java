@@ -1,6 +1,9 @@
 package net.clinica.entity;
 
 import java.time.LocalDate;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -34,6 +38,10 @@ public class Medicamento {
 	@ManyToOne
 	@JoinColumn(name = "cod_tipo")
 	private TipoMedicamento tipo;// "tipo"---> Asociación entre entidades
+	
+	@OneToMany(mappedBy = "medicamento")
+	@JsonIgnore
+	private List<MedicamentoHasBoleta> listDetalle;
 
 	public Integer getCodigo() {
 		return codigo;
@@ -89,6 +97,14 @@ public class Medicamento {
 
 	public void setTipo(TipoMedicamento tipo) {
 		this.tipo = tipo;
+	}
+	
+	public List<MedicamentoHasBoleta> getListDetalle() {
+		return listDetalle;
+	}
+
+	public void setListDetalle(List<MedicamentoHasBoleta> listDetalle) {
+		this.listDetalle = listDetalle;
 	}
 	
 	public Medicamento() {
