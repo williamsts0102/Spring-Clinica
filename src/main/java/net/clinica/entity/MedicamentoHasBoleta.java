@@ -28,6 +28,8 @@ public class MedicamentoHasBoleta implements Serializable{
 	
 	@Column(name = "pre")
 	private double precio;
+	
+	private int cantidad;
 
 	public MedicamentoHasBoletaPK getPk() {
 		return pk;
@@ -61,7 +63,13 @@ public class MedicamentoHasBoleta implements Serializable{
 		this.precio = precio;
 	}
 	
-	
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
 	
 	
 }

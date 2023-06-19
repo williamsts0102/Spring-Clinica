@@ -91,7 +91,12 @@ public class Medicamento {
 		this.tipo = tipo;
 	}
 	
-	
+	public Medicamento() {
+		// TODO Auto-generated constructor stub
+	}
+	public Medicamento(int cod) {
+		codigo=cod;
+	}
 	
 	
 	

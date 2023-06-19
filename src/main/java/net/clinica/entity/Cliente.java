@@ -161,7 +161,12 @@ public class Cliente implements Serializable{
 		this.listaBoletas = listaBoletas;
 	}
 	
-	
+	public Cliente() {
+		
+	}
+	public Cliente(int cod) {
+		codigo=cod;
+	}
 	
 }
 
