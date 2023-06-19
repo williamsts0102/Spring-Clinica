@@ -13,4 +13,6 @@ public interface MedicamentoRepository extends JpaRepository<Medicamento, Intege
 	//select *from tb_medicamento where sto_med>?
 	@Query("select x from Medicamento x where x.stock>?1")
 	public List<Medicamento> listarMedicamentosPorStock(int stock);
+	
+	public List<Medicamento> findByNombreStartingWith(String nom);
 }

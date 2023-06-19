@@ -28,5 +28,7 @@ public class MedicamentoServices {
 	public List<Medicamento> listarTodos(){
 		return repo.findAll();
 	}
-	
+	public List<Medicamento> listarPorNombre(String nom){
+		return repo.findByNombreStartingWith(nom);
+	}
 }
